@@ -56,15 +56,39 @@
 		061C4D3C26B3EBFD008F657F /* ToDoListApp */ = {
 			isa = PBXGroup;
 			children = (
-				061C4D3D26B3EBFD008F657F /* AppDelegate.swift */,
-				061C4D3F26B3EBFD008F657F /* SceneDelegate.swift */,
-				061C4D4126B3EBFD008F657F /* ViewController.swift */,
-				061C4D4326B3EBFD008F657F /* Main.storyboard */,
+				061C4D5126B3F005008F657F /* Configs */,
+				061C4D5226B3F011008F657F /* ViewControllers */,
+				061C4D5326B3F024008F657F /* Storyboards */,
 				061C4D4626B3EC00008F657F /* Assets.xcassets */,
-				061C4D4826B3EC00008F657F /* LaunchScreen.storyboard */,
-				061C4D4B26B3EC00008F657F /* Info.plist */,
 			);
 			path = ToDoListApp;
+			sourceTree = "<group>";
+		};
+		061C4D5126B3F005008F657F /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				061C4D3D26B3EBFD008F657F /* AppDelegate.swift */,
+				061C4D3F26B3EBFD008F657F /* SceneDelegate.swift */,
+				061C4D4B26B3EC00008F657F /* Info.plist */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		061C4D5226B3F011008F657F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				061C4D4126B3EBFD008F657F /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		061C4D5326B3F024008F657F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				061C4D4326B3EBFD008F657F /* Main.storyboard */,
+				061C4D4826B3EC00008F657F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RWWSRV5W4R;
-				INFOPLIST_FILE = ToDoListApp/Info.plist;
+				INFOPLIST_FILE = ToDoListApp/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RWWSRV5W4R;
-				INFOPLIST_FILE = ToDoListApp/Info.plist;
+				INFOPLIST_FILE = ToDoListApp/Configs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
