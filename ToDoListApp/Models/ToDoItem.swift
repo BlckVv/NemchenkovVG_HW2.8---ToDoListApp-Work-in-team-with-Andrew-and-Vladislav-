@@ -9,4 +9,10 @@
 struct ToDoItem {
     let title: String
     let description: String
+    let status: Status
+}
+
+enum Status {
+    case active
+    case completed
 }
