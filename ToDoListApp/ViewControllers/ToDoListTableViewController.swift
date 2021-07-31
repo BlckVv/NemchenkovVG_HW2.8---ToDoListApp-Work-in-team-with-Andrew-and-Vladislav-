@@ -30,8 +30,8 @@ class ToDoListTableViewController: UITableViewController {
         
         content.text = toDoItem.title
         
-        if model.status == .completed {
-           backgroundcolor = red
+        if toDoItem.status == .completed {
+            cell.contentView.backgroundColor = UIColor.systemRed
         }
         
         return cell
