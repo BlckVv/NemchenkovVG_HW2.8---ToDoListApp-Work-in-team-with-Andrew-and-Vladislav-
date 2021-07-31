@@ -16,10 +16,15 @@ class ToDoListTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoItems.toDoArray.count
+         toDoItems.toDoArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,12 +53,14 @@ class ToDoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             toDoItems.toDoArray.remove(at: indexPath.row)
+            tableView.reloadData()
         }
     }
     
     // MARK: - Перемещение ячейки
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        toDoItems.toDoArray[sourceIndexPath.row] = toDoItems.toDoArray[destinationIndexPath.row]
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
