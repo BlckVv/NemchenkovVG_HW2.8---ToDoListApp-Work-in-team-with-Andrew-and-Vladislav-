@@ -30,6 +30,8 @@ class ToDoListTableViewController: UITableViewController {
         
         content.text = toDoItem.title
         
+        cell.contentConfiguration = content
+        
         if toDoItem.status == .completed {
             cell.contentView.backgroundColor = UIColor.systemRed
         }
@@ -56,5 +58,11 @@ class ToDoListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    // MARK: - Навигация
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
 }
