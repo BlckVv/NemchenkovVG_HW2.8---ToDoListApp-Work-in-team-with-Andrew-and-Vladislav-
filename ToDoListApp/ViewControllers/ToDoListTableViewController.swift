@@ -32,7 +32,6 @@ class ToDoListTableViewController: UITableViewController {
         
         var content = cell.defaultContentConfiguration()
         let toDoItem = toDoItems.toDoArray[indexPath.row]
-        print(toDoItem)
         
         content.text = toDoItem.title
         
