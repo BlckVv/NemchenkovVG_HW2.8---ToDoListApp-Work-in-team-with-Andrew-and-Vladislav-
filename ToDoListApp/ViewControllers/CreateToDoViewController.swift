@@ -9,13 +9,13 @@ import UIKit
 
 class CreateToDoViewController: UIViewController {
     
-    var toDoItems: ToDoListData!
-    
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var descriptionTV: UITextView!
     
     @IBOutlet weak var addTaskButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
+    var toDoItems: ToDoListData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
