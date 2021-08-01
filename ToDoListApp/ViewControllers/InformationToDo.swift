@@ -28,8 +28,13 @@ class InformationToDo: UIViewController {
         super.viewDidLoad()
         titleLable.text = toDoItem?.title
         descriptionLabel.text = toDoItem?.description
+        
         completeButton.layer.cornerRadius = 10
         deleteButton.layer.cornerRadius = 10
+        
+        if toDoItem?.status == .completed {
+            completeButton.setTitle("Active", for: .normal)
+        }
         
     }
     

@@ -22,29 +22,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-9Q-4GN">
-                                <rect key="frame" x="20" y="128" width="388" height="30"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-9Q-4GN">
+                                <rect key="frame" x="20" y="128" width="388" height="247"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="247" id="5Wi-aO-kgC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bdh-iP-z5p">
-                                <rect key="frame" x="80" y="751" width="268" height="116"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bdh-iP-z5p">
+                                <rect key="frame" x="20" y="827" width="388" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsP-J7-354">
-                                        <rect key="frame" x="0.0" y="0.0" width="268" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Complete"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Complete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="completeButtonPressed" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SI3-pq-tfk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECw-Ty-6CU">
-                                        <rect key="frame" x="0.0" y="72" width="268" height="44"/>
+                                        <rect key="frame" x="208" y="0.0" width="180" height="40"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Delete"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="deleteButtonPressed" destination="Y6W-OH-hqX" eventType="touchUpInside" id="A8L-gK-pZU"/>
                                         </connections>
@@ -60,10 +67,10 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mhD-9Q-4GN" secondAttribute="trailing" constant="20" id="DyX-Ik-OKv"/>
                             <constraint firstItem="mhD-9Q-4GN" firstAttribute="top" secondItem="BF0-Ng-kSb" secondAttribute="bottom" constant="25" id="G2k-OX-894"/>
                             <constraint firstItem="BF0-Ng-kSb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="I9C-0f-Zf9"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Bdh-iP-z5p" secondAttribute="trailing" constant="80" id="IZo-ZF-QU7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Bdh-iP-z5p" secondAttribute="trailing" constant="20" id="IZo-ZF-QU7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BF0-Ng-kSb" secondAttribute="trailing" constant="20" id="IzB-0s-Chh"/>
                             <constraint firstItem="Bdh-iP-z5p" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bGA-6b-ZQo"/>
-                            <constraint firstItem="Bdh-iP-z5p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="80" id="f88-TO-DpZ"/>
+                            <constraint firstItem="Bdh-iP-z5p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="f88-TO-DpZ"/>
                             <constraint firstItem="mhD-9Q-4GN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="geo-X3-hgm"/>
                         </constraints>
                     </view>
@@ -76,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="87.723214285714278"/>
+            <point key="canvasLocation" x="18.22429906542056" y="87.473002159827217"/>
         </scene>
     </scenes>
     <resources>

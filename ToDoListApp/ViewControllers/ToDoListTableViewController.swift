@@ -37,47 +37,40 @@ class ToDoListTableViewController: UITableViewController {
         
         cell.contentConfiguration = content
         
-        if toDoItem.status == .completed {
-            cell.contentView.backgroundColor = UIColor.systemRed
-        }
+        setBackground(status: toDoItems.toDoArray[indexPath.row].status, cell: cell)
         
         return cell
     }
     
-    // MARK: - Удаление ячейки
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        true
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .none
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            toDoItems.toDoArray.remove(at: indexPath.row)
-            tableView.reloadData()
-        }
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        false
     }
     
     // MARK: - Перемещение ячейки
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        toDoItems.toDoArray[sourceIndexPath.row] = toDoItems.toDoArray[destinationIndexPath.row]
+        
+        let movedObject = toDoItems.toDoArray[sourceIndexPath.row]
+        toDoItems.toDoArray.remove(at: sourceIndexPath.row)
+        toDoItems.toDoArray.insert(movedObject, at: destinationIndexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+        true
     }
     
     // MARK: - Навигация
     
-    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //  }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let VC = UIStoryboard(name: "InformationToDo", bundle: nil).instantiateViewController(identifier: "InformationToDo") as! InformationToDo
-        VC.toDoItem = toDoItems.toDoArray[indexPath.row]
-        VC.index = indexPath.row
-        VC.delegate = self
-        navigationController?.pushViewController(VC, animated: true)
+        let vc = UIStoryboard(name: "InformationToDo", bundle: nil).instantiateViewController(identifier: "InformationToDo") as! InformationToDo
+        vc.toDoItem = toDoItems.toDoArray[indexPath.row]
+        vc.index = indexPath.row
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -92,8 +85,23 @@ extension ToDoListTableViewController: myInformationToDoDelegete {
     }
     
     func changeStatusItem(index: Int) {
-        toDoItems.toDoArray[index].status = .completed
+       
+        if toDoItems.toDoArray[index].status == .active {
+            toDoItems.toDoArray[index].status = .completed
+        } else {
+            toDoItems.toDoArray[index].status = .active
+        }
+        
         tableView.reloadData()
+    }
+    
+    private func setBackground(status: Status, cell: UITableViewCell){
+        switch status {
+        case .active:
+            cell.contentView.backgroundColor = UIColor.white
+        default:
+            cell.contentView.backgroundColor = UIColor.green.withAlphaComponent(0.3)
+        }
     }
 }
 

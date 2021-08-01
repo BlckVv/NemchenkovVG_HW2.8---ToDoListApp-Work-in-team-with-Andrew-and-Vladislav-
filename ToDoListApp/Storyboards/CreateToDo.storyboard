@@ -54,7 +54,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Hjt-nw-tku">
-                                <rect key="frame" x="43" y="304.5" width="234" height="40"/>
+                                <rect key="frame" x="43" y="305" width="234" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeP-Wp-oSO">
                                         <rect key="frame" x="0.0" y="0.0" width="99" height="40"/>
@@ -95,7 +95,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QTI-uY-qCI" secondAttribute="trailing" constant="20" id="N4p-a9-aVS"/>
                             <constraint firstItem="QTI-uY-qCI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ZBT-O1-av8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gef-3x-ZEm" secondAttribute="trailing" constant="20" id="dTt-zZ-1La"/>
-                            <constraint firstItem="Hjt-nw-tku" firstAttribute="top" secondItem="QTI-uY-qCI" secondAttribute="bottom" constant="74.333333333333314" id="hGF-hE-BgS"/>
+                            <constraint firstItem="Hjt-nw-tku" firstAttribute="top" secondItem="QTI-uY-qCI" secondAttribute="bottom" constant="75" id="hGF-hE-BgS"/>
                             <constraint firstItem="Hjt-nw-tku" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nr8-Xh-uP5"/>
                             <constraint firstItem="QTI-uY-qCI" firstAttribute="top" secondItem="Gef-3x-ZEm" secondAttribute="bottom" constant="45" id="op4-Xg-9M9"/>
                         </constraints>
