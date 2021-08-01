@@ -9,7 +9,7 @@
 struct ToDoItem {
     let title: String
     let description: String
-    let status: Status
+    var status: Status
 }
 
 enum Status {

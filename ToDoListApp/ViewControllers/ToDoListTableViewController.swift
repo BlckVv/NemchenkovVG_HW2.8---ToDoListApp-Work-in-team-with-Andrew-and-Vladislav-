@@ -24,7 +24,7 @@ class ToDoListTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         toDoItems.toDoArray.count
+        toDoItems.toDoArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,7 +69,31 @@ class ToDoListTableViewController: UITableViewController {
     
     // MARK: - Навигация
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //  }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let VC = UIStoryboard(name: "InformationToDo", bundle: nil).instantiateViewController(identifier: "InformationToDo") as! InformationToDo
+        VC.toDoItem = toDoItems.toDoArray[indexPath.row]
+        VC.index = indexPath.row
+        VC.delegate = self
+        navigationController?.pushViewController(VC, animated: true)
+    }
+    
+}
+
+// MARK: - Folloved protocols
+
+extension ToDoListTableViewController: myInformationToDoDelegete {
+    
+    func deleteItem(index: Int) {
+        toDoItems.toDoArray.remove(at: index)
+        tableView.reloadData()
+    }
+    
+    func changeStatusItem(index: Int) {
+        toDoItems.toDoArray[index].status = .completed
+        tableView.reloadData()
     }
 }
+
